@@ -30,4 +30,9 @@ class Member_model extends CI_Model {
     $this->db->insert( 'members', $data );
   }
 
+  public function memberOk( $data )
+  {
+    $this->db->where($data);
+    return $this->db->get('members')->row_array();
+  }
 }

@@ -17,12 +17,19 @@
         <li><a href="/rooms">Rooms</a></li>
         <li><a href="/guests">Guests</a></li>
         <li><a href="/members">Members</a></li>
+        <?php if (null !== $this->input->cookie('member_ID')):?>
+        <li><a href="/logout">Logout</a></li>
+        <li> <?= $this->input->cookie('member_name') ?></li>
+      <?php else :?>
+        <li><a href="/login">Login</a></li>
+      <?php endif; ?>
       </ul>
 
       <ul id="nav-mobile" class="sidenav">
         <li><a href="/rooms">Rooms</a></li>
         <li><a href="/guests">Guests</a></li>
         <li><a href="/members">Members</a></li>
+        <li><a href="/login">Login</a></li>
       </ul>
       <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
     </div>
